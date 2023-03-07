@@ -6,7 +6,7 @@ Below is an exploration of different project combinations to asses what it takes
 
 ## General steps to enable the TFM
 
-* Specify the platform with a version (haven't found a way to avoid the version)
+* Specify the platform with a version (net8.0-browswer1.0)
 * Add the property `<TargetPlatformSupported>true</TargetPlatformSupported>` to a property group.
 * Add the version to the list of supported target platform versions:
   ```xml
@@ -14,6 +14,21 @@ Below is an exploration of different project combinations to asses what it takes
     <SdkSupportedTargetPlatformVersion Include="1.0" />
   </ItemGroup>
   ```
+
+## Findings
+* Was not able to just specify net8.0-browser
+* Was not able to get rid of `warning CA1418: Version '1.0' is not valid for platform 'browser'. Do not use versions for this platform.`
+  * I suspect this is a matter of "finding" the right "knob" on the SDK.
+
+## Unexplored areas
+* All the investigation was command-line driven, haven't played through VS yet.
+
+## Potential improvements to the experience
+* Requirement to specify the target framework during publish when multitargeting:
+  * It would be great if we could select a "preferred" target framework for publish.
+  * Even better if this is respected by the VS UI.
+* Nuget package installation:
+  * Select the target framework when installing a dependency (CLI and UI) and have nuget place it in the right itemgroup (or per platform .targets file).
 
 ## List of scenarios with their description
 
