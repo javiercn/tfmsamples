@@ -19,7 +19,7 @@ Below is an exploration of different project combinations to asses what it takes
 
 ### 01 - Standalone app
 ```mermaid
-flowchart LR
+flowchart TD
 subgraph Application
 net8.0-browser1.0
 end
@@ -27,7 +27,7 @@ end
 
 ### 02 - Standalone class library
 ```mermaid
-flowchart LR
+flowchart TD
 subgraph Library
 net8.0-browser1.0
 end
@@ -35,7 +35,7 @@ end
 
 ### 03 - Standalone multitargeting app
 ```mermaid
-flowchart LR
+flowchart TD
 subgraph Application
 net8.0;net8.0-browser1.0
 end
@@ -43,7 +43,7 @@ end
 
 ### 04 - Standalone multitargeting library
 ```mermaid
-flowchart LR
+flowchart TD
 subgraph Library
 net8.0;net8.0-browser1.0
 end
@@ -51,7 +51,7 @@ end
 
 ### 05 - Singletargeting app references singletargeting library
 ```mermaid
-flowchart LR
+flowchart TD
 
 subgraph Application
   net8browserapp["net8.0-browser1.0"]
@@ -66,7 +66,7 @@ Application-->Library
 
 ### 06 - Singletargeting app references singletargeting browser library
 ```mermaid
-flowchart LR
+flowchart TD
 
 subgraph Application
   net8app["net8.0"]
@@ -81,7 +81,7 @@ Application-->Library
 
 ### 07 - Singletargeting browser app references singletargeting library
 ```mermaid
-flowchart LR
+flowchart TD
 
 subgraph Application
   net8.0-browser1.0app["net8.0-browser1.0"]
@@ -96,7 +96,7 @@ Application-->Library
 
 ### 08 - Multitargeting app references multitargeting library
 ```mermaid
-flowchart LR
+flowchart TD
 
 subgraph Application
   net8app["net8.0"]
@@ -113,7 +113,7 @@ Application-->Library
 
 ### 09 - Multitargeting app references single targeting library
 ```mermaid
-flowchart LR
+flowchart TD
 
 subgraph Application
   net8app["net8.0"]
@@ -129,7 +129,7 @@ Application-->Library
 
 ### 10 - Multitargeting app references single targeting library (browser)
 ```mermaid
-flowchart LR
+flowchart TD
 
 subgraph Application
   net8app["net8.0"]
@@ -145,7 +145,7 @@ Application-->Library
 
 ### 11 - Single targeting app references multi targeting library 
 ```mermaid
-flowchart LR
+flowchart TD
 
 subgraph Application
   net8app["net8.0"]
@@ -161,7 +161,7 @@ Application-->Library
 
 ### 12 - Single targeting app references multi targeting library (browser)
 ```mermaid
-flowchart LR
+flowchart TD
 
 subgraph Application
   net8-browserapp["net8.0-browser1.0"]
@@ -186,7 +186,7 @@ These are scenarios where I had to add additional attributes to the `ProjectRefe
 The app targets net8.0 and the library targets net8.0-browser
 
 ```mermaid
-flowchart LR
+flowchart TD
 
 subgraph Application
   net8app["net8.0"]
@@ -216,7 +216,7 @@ Application-->Library
 App multitargets but the library only targets the browser
 
 ```mermaid
-flowchart LR
+flowchart TD
 
 subgraph Application
   net8app["net8.0"]
